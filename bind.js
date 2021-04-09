@@ -1,5 +1,6 @@
-Function.prototype.bindl = function () {
+Function.prototype.bindl1 = function () {
   const self = this
+  console.log(typeof arguments)
   const context = arguments[0]
   const mainargs = Array.prototype.slice.call(arguments, 1)
   return function () {
@@ -25,5 +26,5 @@ const monica = {
   },
 }
 const rachel = {name: 'Rachel Green', total: 1500}
-const rachelFeeDeductor = monica.deductMontlyFee.bindl2(rachel, 500, 'delhi')
+const rachelFeeDeductor = monica.deductMontlyFee.bindl1(rachel, 500, 'delhi')
 console.log(rachelFeeDeductor('delhi UT', 'India'))
